@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "clockhud",
+  "version": "${version}",
+  "name": "Clock HUD",
+  "description": "Display a clock on client side",
+  "authors": [
+    "MrMelon54"
+  ],
+  "contact": {
+    "website": "https://minecraft.onpointcoding.net/mods/clockhud",
+    "repo": "https://codehub.onpointcoding.net/sean/clockhud-fabric"
+  },
+  "license": "MIT",
+  "icon": "assets/clockhud/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.onpointcoding.clockhud.client.ClockHudClient"
+    ],
+    "main": [
+      "net.onpointcoding.clockhud.ClockHud"
+    ],
+    "modmenu": [
+      "net.onpointcoding.clockhud.config.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "clockhud.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.17.x"
+  }
+}
