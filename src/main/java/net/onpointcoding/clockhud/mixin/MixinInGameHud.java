@@ -36,7 +36,7 @@ public class MixinInGameHud {
         MinecraftClient client = MinecraftClient.getInstance();
         if (!config.clockEnabled || client.options.debugEnabled) return;
 
-        String clockText = client.world != null ? String.valueOf(client.world.getTimeOfDay()) : "";
+        String clockText = client.world != null ? String.valueOf(client.world.getTimeOfDay() % 24000L) : "";
         int textLength = client.textRenderer.getWidth(clockText);
         int textHeight = client.textRenderer.fontHeight;
 
@@ -62,7 +62,7 @@ public class MixinInGameHud {
         };
 
         if (clockItemStack != null && config.iconEnabled)
-            MinecraftClient.getInstance().getItemRenderer().renderInGui(clockItemStack, myX + iconOffset, myY + clockY);
+            MinecraftClient.getInstance().getItemRenderer().renderInGuiWithOverrides(MinecraftClient.getInstance().player, clockItemStack, myX + iconOffset, myY + clockY, 0);
         client.textRenderer.draw(matrices, new LiteralText(clockText), myX + (config.iconPosition == ClockPosition.LEFT ? offsetForIcon : 0), myY, config.colour);
     }
 }
