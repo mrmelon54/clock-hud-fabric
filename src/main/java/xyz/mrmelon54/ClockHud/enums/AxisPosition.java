@@ -1,4 +1,4 @@
-package net.onpointcoding.clockhud.enums;
+package xyz.mrmelon54.ClockHud.enums;
 
 public enum AxisPosition {
     NEGATIVE,

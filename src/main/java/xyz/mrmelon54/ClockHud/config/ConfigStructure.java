@@ -1,12 +1,12 @@
-package net.onpointcoding.clockhud.config;
+package xyz.mrmelon54.ClockHud.config;
 
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
-import net.onpointcoding.clockhud.enums.ClockPosition;
-import net.onpointcoding.clockhud.enums.DisplayPosition;
+import xyz.mrmelon54.ClockHud.enums.ClockPosition;
+import xyz.mrmelon54.ClockHud.enums.DisplayPosition;
 
-@Config(name = "clockhud")
+@Config(name = "clock-hud")
 @Config.Gui.Background("minecraft:textures/block/cut_copper.png")
 public class ConfigStructure implements ConfigData {
     public boolean clockEnabled = true;

@@ -1,0 +1,10 @@
+{
+  "text.autoconfig.clock-hud.title": "Clock HUD",
+  "text.autoconfig.clock-hud.option.clockEnabled": "Clock Enabled?",
+  "text.autoconfig.clock-hud.option.iconEnabled": "Icon Enabled?",
+  "text.autoconfig.clock-hud.option.iconPosition": "Icon Position",
+  "text.autoconfig.clock-hud.option.position": "Position",
+  "text.autoconfig.clock-hud.option.colour": "Colour",
+  "text.autoconfig.clock-hud.option.xOffset": "X Offset",
+  "text.autoconfig.clock-hud.option.yOffset": "Y Offset"
+}

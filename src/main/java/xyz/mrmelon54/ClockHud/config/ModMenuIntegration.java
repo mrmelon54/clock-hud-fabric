@@ -1,4 +1,4 @@
-package net.onpointcoding.clockhud.config;
+package xyz.mrmelon54.ClockHud.config;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;

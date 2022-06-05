@@ -1,4 +1,4 @@
-package net.onpointcoding.clockhud.mixin;
+package xyz.mrmelon54.ClockHud.mixin;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.InGameHud;
@@ -6,9 +6,9 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.text.LiteralText;
-import net.onpointcoding.clockhud.client.ClockHudClient;
-import net.onpointcoding.clockhud.config.ConfigStructure;
-import net.onpointcoding.clockhud.enums.ClockPosition;
+import xyz.mrmelon54.ClockHud.client.ClockHudClient;
+import xyz.mrmelon54.ClockHud.config.ConfigStructure;
+import xyz.mrmelon54.ClockHud.enums.ClockPosition;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
