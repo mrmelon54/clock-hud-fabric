@@ -3,9 +3,10 @@ package xyz.mrmelon54.ClockHud.client;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.Environment;
 import xyz.mrmelon54.ClockHud.config.ConfigStructure;
 
-@net.fabricmc.api.Environment(net.fabricmc.api.EnvType.CLIENT)
+@Environment(net.fabricmc.api.EnvType.CLIENT)
 public class ClockHudClient implements ClientModInitializer {
     private ConfigStructure config;
     private static ClockHudClient instance;

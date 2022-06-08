@@ -2,10 +2,12 @@ package xyz.mrmelon54.ClockHud.mixin;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.InGameHud;
+import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.LiteralTextContent;
+import net.minecraft.text.Text;
 import xyz.mrmelon54.ClockHud.client.ClockHudClient;
 import xyz.mrmelon54.ClockHud.config.ConfigStructure;
 import xyz.mrmelon54.ClockHud.enums.ClockPosition;
@@ -26,7 +28,7 @@ public class MixinInGameHud {
     private ItemStack clockItemStack;
 
     @Inject(method = "<init>", at = @At("TAIL"))
-    public void init(MinecraftClient client, CallbackInfo ci) {
+    public void init(MinecraftClient client, ItemRenderer itemRenderer, CallbackInfo ci) {
         clockItemStack = new ItemStack(Items.CLOCK);
     }
 
@@ -63,6 +65,6 @@ public class MixinInGameHud {
 
         if (clockItemStack != null && config.iconEnabled)
             MinecraftClient.getInstance().getItemRenderer().renderInGuiWithOverrides(MinecraftClient.getInstance().player, clockItemStack, myX + iconOffset, myY + clockY, 0);
-        client.textRenderer.draw(matrices, new LiteralText(clockText), myX + (config.iconPosition == ClockPosition.LEFT ? offsetForIcon : 0), myY, config.colour);
+        client.textRenderer.draw(matrices, Text.literal(clockText), myX + (config.iconPosition == ClockPosition.LEFT ? offsetForIcon : 0), myY, config.colour);
     }
 }
