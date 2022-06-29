@@ -20,3 +20,4 @@ Requires the [Fabric Loader](https://fabricmc.net/use/) and [Fabric API](https:/
 ## Download
 
 - [CurseForge](https://www.curseforge.com/minecraft/mc-mods/clockhud)
+- [Modrinth](https://modrinth.com/clock-hud)
