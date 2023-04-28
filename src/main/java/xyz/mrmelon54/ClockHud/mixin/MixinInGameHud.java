@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.text.LiteralTextContent;
 import net.minecraft.text.Text;
+import org.spongepowered.asm.mixin.Final;
 import xyz.mrmelon54.ClockHud.client.ClockHudClient;
 import xyz.mrmelon54.ClockHud.config.ConfigStructure;
 import xyz.mrmelon54.ClockHud.enums.ClockPosition;
@@ -25,6 +26,7 @@ public class MixinInGameHud {
     @Shadow
     private int scaledWidth;
 
+    @Shadow @Final private MinecraftClient client;
     private ItemStack clockItemStack;
 
     @Inject(method = "<init>", at = @At("TAIL"))
@@ -64,7 +66,7 @@ public class MixinInGameHud {
         };
 
         if (clockItemStack != null && config.iconEnabled)
-            MinecraftClient.getInstance().getItemRenderer().renderInGuiWithOverrides(MinecraftClient.getInstance().player, clockItemStack, myX + iconOffset, myY + clockY, 0);
+            this.client.getItemRenderer().renderInGuiWithOverrides(matrices, clockItemStack, myX + iconOffset, myY + clockY, 0);
         client.textRenderer.draw(matrices, Text.literal(clockText), myX + (config.iconPosition == ClockPosition.LEFT ? offsetForIcon : 0), myY, config.colour);
     }
 }
